@@ -6,11 +6,22 @@ function App() {
   const [count, setCount] = useState(0);
   
   
-  const [theme, setTheme] = useState(0);
+  const [theme, setTheme] = useState(light);
+    const toggle = () => {
+      if (theme === 'light') {
+        setTheme('dark');
+        
+      } else {
+        setTheme('light');
+
+        
+      }
+
+    }
 
 
   // const add = () =>{
-  //   setCount(count + 1);
+    // setCount(count + 1);
   //   }
   //   // console.log("this is add func")
 
@@ -23,7 +34,8 @@ function App() {
   // }
 
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
+      <button onClick={toggle}>light</button>
       <div className="container">
         <div className="wrapper">
           <h1> Counter App</h1>
